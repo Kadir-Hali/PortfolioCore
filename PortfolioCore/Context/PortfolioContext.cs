@@ -21,6 +21,8 @@ namespace PortfolioCore.Context
         public DbSet<SocialMedia> SocialMedias { get; set; }
         public DbSet<WorkField> WorkFields { get; set; }
         public DbSet<About> Abouts { get; set; }
+        public DbSet<Service> Services { get; set; }
+
 
     }
 }
