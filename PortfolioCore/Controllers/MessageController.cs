@@ -15,9 +15,13 @@ namespace PortfolioCore.Controllers
         [HttpPost]
         public IActionResult SaveMessage(Message message)
         {
-            context.Messages.Add(message);
-            context.SaveChanges();
-            return RedirectToAction("Index");
+            if (ModelState.IsValid)
+            {
+                context.Messages.Add(message);
+                context.SaveChanges();
+                return Ok(); 
+            }
+            return BadRequest(); 
         }
     }
 }

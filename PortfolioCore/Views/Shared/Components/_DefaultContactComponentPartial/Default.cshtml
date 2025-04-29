@@ -47,11 +47,7 @@
                         </div>
 
                         <div class="col-md-12 text-center">
-                            <div class="loading">Loading</div>
-                            <div class="error-message"></div>
-                            <div class="sent-message">Your message has been sent. Thank you!</div>
-
-                            <button type="submit">Send Message</button>
+                            <button type="submit">Mesajı Gönder</button>
 
                         </div>
 
@@ -59,7 +55,45 @@
                     <br />
                     <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d36100.09189483657!2d30.686949184130665!3d36.89447540196054!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x14c39aaeddadadc1%3A0x95c69f73f9e32e33!2sAntalya!5e0!3m2!1str!2str!4v1745912992093!5m2!1str!2str" width="850" height="400" style="border:0;" allowfullscreen="" loading="lazy" referrerpolicy="no-referrer-when-downgrade"></iframe>
                 </form>
+                <script>
+                    document.addEventListener("DOMContentLoaded", function () {
+                        const form = document.querySelector(".php-email-form");
 
+                        form.addEventListener("submit", function (e) {
+                            e.preventDefault(); // Formun hemen submit olmasını durdur
+                            const formData = new FormData(form);
+
+                            fetch(form.action, {
+                                method: "POST",
+                                body: formData
+                            })
+                            .then(response => {
+                                if (response.ok) {
+                                    Swal.fire(
+                                        'Başarılı!',
+                                        'Mesajınız gönderildi!',
+                                        'success'
+                                    ).then(() => {
+                                        form.reset(); 
+                                    });
+                                } else {
+                                    Swal.fire(
+                                        'Hata!',
+                                        'Mesaj gönderilemedi!',
+                                        'error'
+                                    );
+                                }
+                            })
+                            .catch(error => {
+                                Swal.fire(
+                                    'Hata!',
+                                    'Sunucuya bağlanılamadı!',
+                                    'error'
+                                );
+                            });
+                        });
+                    });
+                </script>
             </div><!-- End Contact Form -->
 
         </div>
