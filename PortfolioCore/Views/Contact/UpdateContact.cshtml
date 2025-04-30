@@ -1,0 +1,24 @@
+﻿@model PortfolioCore.Entities.Contact
+
+@{
+    ViewData["Title"] = "UpdateContact";
+    Layout = "~/Views/AdminLayout/Index.cshtml";
+}
+
+<h2>Yeni İletişim Bilgisi Ekleme Sayfası</h2>
+<form method="post">
+    <input type="hidden" asp-for="ContactId" />
+    <label>Başlık</label>
+    <input type="text" class="form-control" asp-for="ContactTitle" style="border:1px solid black;" />
+    <br />
+    <label>Açıklama</label>
+    <input type="text" class="form-control" asp-for="ContactDescription" style="border:1px solid black;" />
+    <br />
+    <label>İkon</label>
+    <input type="text" class="form-control" asp-for="ContactIcon" style="border:1px solid black;" />
+    <br />
+    <button class="btn btn-primary">İletişim Bilgisi Kaydet</button>
+
+</form>
+
+

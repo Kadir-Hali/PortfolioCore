@@ -7,9 +7,10 @@ namespace PortfolioCore.Controllers
     public class MessageController : Controller
     {
         PortfolioContext context = new PortfolioContext();
-        public IActionResult Index()
+        public IActionResult Inbox()
         {
-            return View();
+            var values = context.Messages.ToList();
+            return View(values);
         }
 
         [HttpPost]
@@ -22,6 +23,35 @@ namespace PortfolioCore.Controllers
                 return Ok(); 
             }
             return BadRequest(); 
+        }
+
+        public IActionResult ChangeIsReadToTrue(int id)
+        {
+            var value = context.Messages.Find(id);
+            value.IsRead = true;
+            context.SaveChanges();
+            return RedirectToAction("Inbox");
+        }
+
+        public IActionResult ChangeIsReadToFalse(int id)
+        {
+            var value = context.Messages.Find(id);
+            value.IsRead = false;
+            context.SaveChanges();
+            return RedirectToAction("Inbox");
+        }
+
+        public IActionResult DeleteMessage(int id)
+        {
+            var value = context.Messages.Find(id);
+            context.Messages.Remove(value);
+            context.SaveChanges();
+            return RedirectToAction("Inbox");
+        }
+        public IActionResult MessageDetail(int id)
+        {
+            var value = context.Messages.Find(id);
+            return View(value);
         }
     }
 }

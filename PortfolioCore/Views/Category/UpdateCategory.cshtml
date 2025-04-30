@@ -1,0 +1,16 @@
+﻿@model PortfolioCore.Entities.Category
+@{
+    ViewData["Title"] = "UpdateCategory";
+    Layout = "~/Views/AdminLayout/Index.cshtml";
+}
+
+<h2>Kategori Güncelleme Sayfası</h2>
+<form method="post">
+    <input type="hidden" asp-for="CategoryId" />
+    <label>Kategori</label>
+    <input type="text" class="form-control" asp-for="CategoryName" style="border:1px solid black;" />
+    <br />
+    <button class="btn btn-primary">Kategoriyi Kaydet</button>
+
+</form>
+

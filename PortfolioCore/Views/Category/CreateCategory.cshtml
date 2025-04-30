@@ -1,0 +1,17 @@
+﻿@model PortfolioCore.Entities.Category
+
+@{
+    ViewData["Title"] = "CreateCategory";
+    Layout = "~/Views/AdminLayout/Index.cshtml";
+}
+
+<h2>Yeni Kategori Ekleme Sayfası</h2>
+<form method="post">
+    <label>Kategori</label>
+    <input type="text" class="form-control" asp-for="CategoryName" style="border:1px solid black;" />
+    <br />
+    <button class="btn btn-primary">Kategori Oluştur</button>
+
+</form>
+
+
