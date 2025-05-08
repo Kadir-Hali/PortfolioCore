@@ -72,3 +72,7 @@ A modern and fully dynamic personal portfolio web application built with **ASP.N
 | Portfolio Dashboard               | Experience Dashboard              |
 |-----------------------------------|-----------------------------------|
 | ![](PortfolioCore-5.jpeg)         | ![](PortfolioCore-6.jpeg)         |
+
+| Custom 404 Error Page             | SweetAlert                        |
+|-----------------------------------|-----------------------------------|
+| ![](PortfolioCore-7.jpeg)         | ![](PortfolioCore-8.jpeg)         |
