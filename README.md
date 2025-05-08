@@ -55,7 +55,6 @@ A modern and fully dynamic personal portfolio web application built with **ASP.N
 - **Entity Framework Core**
 - **MS SQL Server**
 - **Bootstrap 5**
-- **jQuery & AJAX**
 - **SweetAlert**
 
 ---
